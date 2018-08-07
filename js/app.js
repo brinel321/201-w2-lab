@@ -1,55 +1,22 @@
 'use strict'; //highlights any mistakes made with variables
 console.log('js is linked');
 
-//customer details for the 1st and Pine location
-var loc1stAndPike = { 
-  location: '1st and Pike',
-  minCust: 23,
-  maxCust: 65,
-  avgCook: 6.3,
-  randCust: getRandomCustomerCount,
-  hourlyCookieSales: getHourlyCookieSales
+//Template for all the stores
+function storeConstruct (storeLocationPara, minCustPara, maxCustPara, avgCookPara){
+  this.storelocation = storeLocationPara;
+  this.minCust = minCustPara;
+  this.maxCust = maxCustPara;
+  this.avgCook = avgCookPara;
+  this.randCust = getRandomCustomerCount; //BAD: improve this
+  this.hourlyCookieSales = getHourlyCookieSales; //BAD: improve this
 }
 
-//customer details for the SeaTac Airport location
-var locSeaTac = { 
-  location: 'SeaTac Airport', 
-  minCust: 3,
-  maxCust: 24,
-  avgCook: 1.2,
-  randCust: getRandomCustomerCount,
-  hourlyCookieSales: getHourlyCookieSales
-}
-
-//customer details for the Seattle Center location
-var locSeattleCenter = { 
-  location: 'Seattle Center',
-  minCust: 11,
-  maxCust: 38,
-  avgCook: 3.7,
-  randCust: getRandomCustomerCount,
-  hourlyCookieSales: getHourlyCookieSales
-}
-
-//customer details for the Capitol Hill location
-var locCapitolHill = { 
-  location: 'Capitol Hill',
-  minCust: 20,
-  maxCust: 38,
-  avgCook: 2.3,
-  randCust: getRandomCustomerCount,
-  hourlyCookieSales: getHourlyCookieSales
-}
-
-//customer details for the Alki location
-var locAlki = { 
-  location: 'Alki',
-  minCust: 2,
-  maxCust: 16,
-  avgCook: 4.6,
-  randCust: getRandomCustomerCount,
-  hourlyCookieSales: getHourlyCookieSales
-}
+//uses the contuctor to build objects for each store location
+var loc1stAndPike = new storeConstruct('1st and Pike', 23, 65, 6.3);
+var locSeaTac = new storeConstruct('SeaTac Airport', 3, 24, 1.2);
+var locSeattleCenter = new storeConstruct('Seattle Center', 11, 38, 3.7);
+var locCapitolHill = new storeConstruct('Capitol Hill', 20, 38, 2.3);
+var locAlki = new storeConstruct('Alki', 2, 16, 4.6);
 
 //global variables
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
@@ -70,11 +37,11 @@ function getHourlyCookieSales() {
 
   for(var i = 0; i < storeHours.length; i++){
     var tempCount = Math.round((this.avgCook * this.randCust()));
-    hourlyCookieSalesArr.push(storeHours[i] + ': ' + tempCount + ' cookies');
+    hourlyCookieSalesArr.push(tempCount);
     totalCookieCount = tempCount + totalCookieCount;
   }
   
-hourlyCookieSalesArr.push('Total: ' + totalCookieCount + ' cookies')
+hourlyCookieSalesArr.push(totalCookieCount)
 return hourlyCookieSalesArr;
 }
 
@@ -84,7 +51,7 @@ for(var j = 0; j < storeLocations.length; j++){//Loop generates an unordered lis
   var heading = document.getElementById('header');
   var ul = document.createElement('ul');
   
-  ul.textContent = loc.location;
+  ul.textContent = loc.storelocation;
   heading.appendChild(ul);
 
   for(var k = 0; k < (loc.hourlyCookieSales().length); k++){//Nested loop fills out the store's unordered list with the # of cookies sold each hour 
@@ -96,3 +63,5 @@ for(var j = 0; j < storeLocations.length; j++){//Loop generates an unordered lis
   ul.appendChild(storeSales);
   }
 }
+
+
