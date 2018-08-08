@@ -85,7 +85,7 @@ for(var j = 0; j < storeLocations.length; j++){//Loop generates table rows for e
   }
 }
 
-for(var n = 0; n < cookieSoldTotals.length; n++){//Loop generates footer row and fills it with the total # of cookies sold each hour
+for(var n = 0; n < cookieSoldTotals.length; n++){//Loop generates footer row and fills it with the total # of cookies sold each hour!!
   printTableRow('tableFooter', 'td', cookieSoldTotals[n]);
 }
 
