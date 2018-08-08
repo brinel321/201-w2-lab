@@ -27,20 +27,20 @@ cookieSoldTotals[0] = 'Total';//first variable in the array holds the row's titl
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
 var tableHead = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
-//function generates a random # based on the customer's estimated min and max customers, NOTE: MDN provided the formula outline 
-function getRandomCustomerCount() { 
-    var min = Math.ceil(this.minCust);
-    var max = Math.floor(this.maxCust);
-    var randomCustomerCount = Math.round(Math.floor(Math.random() * (max - min)) + min);
-    return randomCustomerCount;
+//function generates a random # based on the customer's estimated min and max customers, NOTE: MDN provided the formula outline
+function getRandomCustomerCount() {
+  var min = Math.ceil(this.minCust);
+  var max = Math.floor(this.maxCust);
+  var randomCustomerCount = Math.round(Math.floor(Math.random() * (max - min)) + min);
+  return randomCustomerCount;
 }
 
 //function calculates the projected cookie sales by hour; outputs hourly sales numbers and total sales numbers in a single array
-function getCookieHourlySales() { 
+function getCookieHourlySales(){
   var hourlyCookieSalesArr = [];
   var totalCookieCount = 0;
 
-for(var i = 1; i < 16; i++){
+  for(var i = 1; i < 16; i++){
     var tempCount = Math.round((this.avgCook * this.randCust()));
     hourlyCookieSalesArr.push(tempCount);
     totalCookieCount = tempCount + totalCookieCount;
@@ -48,8 +48,8 @@ for(var i = 1; i < 16; i++){
     cookieSoldTotals[16] = cookieSoldTotals[16] + tempCount; //adds the total numeber of cookies sold by each store to the grand total # of cookies sold, the grand total is stored in [16]
   }
 
-hourlyCookieSalesArr.push(totalCookieCount);
-return hourlyCookieSalesArr;
+  hourlyCookieSalesArr.push(totalCookieCount);
+  return hourlyCookieSalesArr;
 }
 
 //functions creates a new row in the table
@@ -72,12 +72,12 @@ for(var j = 0; j < storeLocations.length; j++){//Loop generates table rows for e
   var tbody = document.getElementById('tableBody');
   var storeTr = document.createElement('tr');
   var storeTd = document.createElement('td');
-  
+
   storeTd.textContent = loc.storelocation;
   storeTr.appendChild(storeTd);
   tbody.appendChild(storeTr);
 
-  for(var k = 0; k < (cookieHourlySales.length); k++){//Nested loop fills out the store's table row with # of cookies sold each hour 
+  for(var k = 0; k < (cookieHourlySales.length); k++){//Nested loop fills out the store's table row with # of cookies sold each hour
     var storeHourlySales = document.createElement('td');
 
     storeHourlySales.textContent = cookieHourlySales[k];
