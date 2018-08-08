@@ -13,7 +13,7 @@ function StoreConstruct (storeLocationPara, minCustPara, maxCustPara, avgCookPar
 StoreConstruct.prototype.randCust = getRandomCustomerCount;
 StoreConstruct.prototype.cookieHourlySales = getCookieHourlySales;
 
-//uses the contuctor to build objects for each store location
+//uses the contuctor to build objects for each store location!
 var loc1stAndPike = new StoreConstruct('1st and Pike', 23, 65, 6.3);
 var locSeaTac = new StoreConstruct('SeaTac Airport', 3, 24, 1.2);
 var locSeattleCenter = new StoreConstruct('Seattle Center', 11, 38, 3.7);
