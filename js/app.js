@@ -22,7 +22,7 @@ var locAlki = new StoreConstruct('Alki', 2, 16, 4.6);
 
 //global variables
 var cookieSoldTotals = Array(17).fill(0);
-cookieSoldTotals[0] = 'Total';//first element in the array stores the row's title
+cookieSoldTotals[0] = 'Total';//first element in the array stores the row's title!
 
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
 var storeCount = storeLocations.length;
