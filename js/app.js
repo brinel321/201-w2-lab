@@ -22,7 +22,7 @@ var locAlki = new StoreConstruct('Alki', 2, 16, 4.6);
 
 //global variables
 var cookieSoldTotals = Array(17).fill(0);
-cookieSoldTotals[0] = 'Total';//first element in the array stores the row's title
+cookieSoldTotals[0] = 'Total';//first element in the array stores the row's title!
 
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
 var storeCount = storeLocations.length;
@@ -30,29 +30,29 @@ var tableHead = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '
 
 var formElt = document.getElementById('storeForm');
 
-//function generates a random # based on the customer's estimated min and max customers, NOTE: MDN provided the formula outline 
-function getRandomCustomerCount() { 
-    var min = Math.ceil(this.minCust);
-    var max = Math.floor(this.maxCust);
-    var randomCustomerCount = Math.round(Math.floor(Math.random() * (max - min)) + min);
-    return randomCustomerCount;
+//function generates a random # based on the customer's estimated min and max customers, NOTE: MDN provided the formula outline
+function getRandomCustomerCount() {
+  var min = Math.ceil(this.minCust);
+  var max = Math.floor(this.maxCust);
+  var randomCustomerCount = Math.round(Math.floor(Math.random() * (max - min)) + min);
+  return randomCustomerCount;
 }
 
 //function calculates the projected cookie sales by hour for a store, totals the absolute # of cookies sold, and the # of cookies sold by hour for all stores; outputs the stores hourly sales numbers and it's total amount sold in a single array
-function getCookieHourlySales() { 
+function getCookieHourlySales() {
   var hourlyCookieSalesArr = [];
   var totalCookieCount = 0;
 
-for(var i = 1; i < 16; i++){
-    var tempCount = Math.round((this.avgCook * this.randCust()));//calculates the projected # of cookies sold that hour 
+  for(var i = 1; i < 16; i++){
+    var tempCount = Math.round((this.avgCook * this.randCust()));//calculates the projected # of cookies sold that hour
     hourlyCookieSalesArr.push(tempCount);//adds the number of cookies sold during that hour into the store's hourly sales array
     totalCookieCount += tempCount; //running total for number of cookies sold at the store's location for the day
     cookieSoldTotals[i] += tempCount; //adds the total number of cookies sold during each hour into the array, totals are stored in [1] thru [15]
     cookieSoldTotals[16] += tempCount; //adds the total numeber of cookies sold by each store to the grand total # of cookies sold, the grand total is stored in [16]
   }
 
-hourlyCookieSalesArr.push(totalCookieCount);//adds the total # of cookie sales to the store's hourly sales array, stored as the final element in the array 
-return hourlyCookieSalesArr;
+  hourlyCookieSalesArr.push(totalCookieCount);//adds the total # of cookie sales to the store's hourly sales array, stored as the final element in the array
+  return hourlyCookieSalesArr;
 }
 
 //functions creates or ammends (if row already exists) row in the table
@@ -72,7 +72,7 @@ function printTableRow(elIdPara, elPara, variablePara, iteration){
 //Table printing functions
 function printHeader(){
   for(var m = 0; m < tableHead.length; m++){//Loop generates table header and fills it in with 1 hour increments
-   printTableRow('tableHeader', 'td', tableHead[m], m);
+    printTableRow('tableHeader', 'td', tableHead[m], m);
   }
 }
 
@@ -83,12 +83,12 @@ function printTable(counterStart, counterEnd){
     var tbody = document.getElementById('tableBody');
     var storeTr = document.createElement('tr');
     var storeTd = document.createElement('td');
-  
+
     storeTd.textContent = loc.storelocation;
     storeTr.appendChild(storeTd);
     tbody.appendChild(storeTr);
 
-    for(var k = 0; k < (cookieHourlySales.length); k++){//Nested loop fills out the store's table row with # of cookies sold each hour 
+    for(var k = 0; k < (cookieHourlySales.length); k++){//Nested loop fills out the store's table row with # of cookies sold each hour
       var storeHourlySales = document.createElement('td');
 
       storeHourlySales.textContent = cookieHourlySales[k];
@@ -116,4 +116,4 @@ formElt.addEventListener('submit', function(e){
   storeCount += 1;
   printTable((storeCount-1), storeCount);
   printFooter();
-})
+});
