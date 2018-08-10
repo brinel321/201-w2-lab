@@ -22,11 +22,11 @@ var locAlki = new StoreConstruct('Alki', 2, 16, 4.6);
 
 //global variables
 var cookieSoldTotals = Array(17).fill(0);
-cookieSoldTotals[0] = 'Total';//first element in the array stores the row's title!
+cookieSoldTotals[0] = 'Hourly Totals';//first element in the array stores the row's title!
 
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
 var storeCount = storeLocations.length;
-var tableHead = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
+var tableHead = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Store Totals'];
 
 var formElt = document.getElementById('storeForm');
 
@@ -58,11 +58,13 @@ function getCookieHourlySales() {
 //functions creates or ammends (if row already exists) row in the table
 function printTableRow(elIdPara, elPara, variablePara, iteration){
   var elIds  = document.getElementById(elIdPara + elPara + iteration);
-  if(elIds){
+
+  if(elIds){//checks to see if there's a header/footer row aleady generated, if there is then it overrite's the existing cells in that row
     elIds.textContent = variablePara;
   }else{
     var elId = document.getElementById(elIdPara);
     var el = document.createElement(elPara);
+
     el.textContent = variablePara;
     el.id = elIdPara + elPara + iteration;
     elId.appendChild(el);
@@ -76,7 +78,7 @@ function printHeader(){
   }
 }
 
-function printTable(counterStart, counterEnd){
+function printTable(counterStart, counterEnd){//Function prints rows into the table, this is for the body only and excludes the footer and header
   for(var j = counterStart; j < counterEnd; j++){//Loop generates table rows for each store
     var loc = storeLocations[j];
     var cookieHourlySales = loc.cookieHourlySales();

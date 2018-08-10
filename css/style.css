@@ -1,5 +1,11 @@
 body{
     background-color: darksalmon;
+    background-image: url("../salmon.png");
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center 0%;
+    background-size: cover;
+    height: 100%
 }
 
 td, th, tr {
@@ -9,5 +15,97 @@ td, th, tr {
 
 tr:hover {
     background-color: darkgrey;
+    transition: 0.4s;
 }
 
+#tableHeader {
+    background-color: cadetblue;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1em;
+}
+
+#tableBody {
+    background-color: whitesmoke;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1em;
+}
+
+#tableFooter {
+    background-color: darkcyan;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1em;
+}
+
+#storeForm{
+    background-color: gray;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 1em; 
+}
+
+h1 {
+    display: inline;
+    font-size: 5em;
+    position: relative;
+}
+
+/* h2 {
+    display: inline;
+    font-size: 1em;
+    position: relative;
+} */
+
+header {
+    text-align: center;
+    background-color: gray;
+    font-family: 'Monoton', cursive;
+  }
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 2em;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    opacity: .90;
+    font-family: 'Didact Gothic', sans-serif;
+    text-align: center;
+}
+
+#hours {
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: .5em;  
+}
+
+div.products {
+  display: inline-block;
+  /* border: 2px solid gray; */
+  border-radius: 2px;
+  margin: 10px;
+  padding: 20px 50px;
+  /* background-color: #ddffdd; */
+}
+
+.products img {
+    max-height: 100px;
+    padding: 5px;
+  }
