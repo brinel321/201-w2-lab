@@ -1,4 +1,4 @@
-'usestrict'
+'use strict';
 
 var acc = document.getElementsByClassName("accordion");
 console.log(acc);
