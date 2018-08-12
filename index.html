@@ -1,77 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welcome!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
+
 <body>
-    <header> 
-        <h1>Salmon Cookies</h1> 
-    </header>
-    <!-- <img src = "salmon.png"/> -->
-    <button class="accordion">Our Cookies</button>
+  <header id="header">
+    <h1>Salmon Cookies</h1>
+  </header>
+
+  <button class="accordion">Our Cookies</button>
     <div class="panel">
-        <div class="products">
-                <h2>The Original</h2>
-            <img src="frosted-cookie.jpg" />
-                <h3>$1/Cookie</h3>
-        </div>
-        <div class="products">
-                <h2>Variety Pack</h2>
-            <img src="fish.jpg" />
-                <h3>$3/Pack</h3>
-        </div>
-        <div class="products">
-                <h2>Cutter</h2>
-            <img src="cutter.jpeg" />
-                <h3>$10</h3>
-        </div>
-        <div class="products">
-                <h2>T-Shirts</h2>
-            <img src="shirt.jpg" />
-                <h3>$15</h3>
-        </div>
-      <p>Our famous cookies are baked every morning at 5:30 am by or world renowned "cook-i-aires"! We use only locally sourced ingrediants to ensure that all of our cookies have that fresh out of the water flavor! Try The Original, prepared using the Salmon family's secret recipe, or tantalize your taste buds with one of our seasonal Varity Packs!</p>
+      <div class="products">
+        <h2>The Original</h2>
+        <img src="frosted-cookie.jpg" />
+        <h3>$1/Cookie</h3>
+      </div>
+      <div class="products">
+        <h2>Variety Pack</h2>
+        <img src="fish.jpg" />
+        <h3>$3/Pack</h3>
+      </div>
+      <div class="products">
+        <h2>Cutter</h2>
+        <img src="cutter.jpeg" />
+        <h3>$10</h3>
+      </div>
+      <div class="products">
+        <h2>T-Shirts</h2>
+        <img src="shirt.jpg" />
+        <h3>$15</h3>
+      </div>
+      <p id="aboutCookies">Our famous cookies are baked every morning at 5:30 am by or world renowned "cook-i-aires"! We use only locally sourced ingredients to ensure that all of our cookies have that fresh out of the water flavor! Try The Original, prepared using the Salmon family's secret recipe, or tantalize your taste buds with one of our seasonal Variety Packs!</p>
     </div>
     
-    <button class="accordion">The Salmon Family Story</button>
+  <button class="accordion">The Salmon Family Story</button>
     <div class="panel">
-      <p>Lorem ipsum...</p>
+      <div id="familyStory">
+        <img id="family" src="family.jpg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. </p>
+        <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. </p>
+      </div>
     </div>
     
-    <button class="accordion">Our Locations <span id="hours">(open 6 am to 8 pm daily)</span></button>
+  <button class="accordion">Our Locations <span id="hours">(open 6 am to 8 pm daily)</span></button>
     <div class="panel">
-            <div class="Locations">
-                    <h2>Downtown - Pike Place Market</h2>
-                    <h3>Address: 101 Pike St, Seattle, WA 98011</h3>
-                    <h3>Phone: 206.917.1121</h3>
-            </div>
-            <div class="Locations">
-                    <h2>Downtown - Seattle Center</h2>
-                    <h3>Address: 23 Center House Pl, Seattle, WA 98012</h3>
-                    <h3>Phone: 206.662.7184</h3>
-            </div>  
-            <div class="Locations">
-                    <h2>Capitol Hill - Broadway</h2>
-                    <h3>Address: 200 Broadway Ave, Seattle, WA 98102</h3>
-                    <h3>Phone: 206.967.3123</h3>
-            </div>
-            <div class="Locations">
-                    <h2>West Seattle - Alki</h2>
-                    <h3>Address: 313 Waterfront Dr, Seattle, WA 98223</h3>
-                    <h3>Phone: 206.741.6627</h3>
-            </div>
-             <div class="Locations">
-                    <h2>Seattle - Tacoma International Airport</h2>
-                    <h3>Address: 17801 International Blvd, Seattle, WA 98158</h3>
-                    <h3>Phone: 206.487.9840</h3>
-            </div>
+      <span class="Locations">
+        <h2>Downtown - Pike Place Market</h2>
+        <h3>Address: 101 Pike St, Seattle, WA 98011</h3>
+        <h3>Phone: 206.917.1121</h3>
+      </span>
+      <span class="Locations">
+        <h2>Downtown - Seattle Center</h2>
+        <h3>Address: 23 Center House Pl, Seattle, WA 98012</h3>
+        <h3>Phone: 206.662.7184</h3>
+      </span>
+      <span class="Locations">
+        <h2>Capitol Hill - Broadway</h2>
+        <h3>Address: 200 Broadway Ave, Seattle, WA 98102</h3>
+        <h3>Phone: 206.967.3123</h3>
+      </span>
+      <span class="Locations">
+        <h2>West Seattle - Alki</h2>
+        <h3>Address: 313 Waterfront Dr, Seattle, WA 98223</h3>
+        <h3>Phone: 206.741.6627</h3>
+      </span>
+      <span class="Locations">
+        <h2>Seattle - Tacoma International Airport</h2>
+        <h3>Address: 17801 International Blvd, Seattle, WA 98158</h3>
+        <h3>Phone: 206.487.9840</h3>
+      </span>
     </div>
 </body>
 <script src="js/collasable.js"></script>

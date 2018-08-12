@@ -26,7 +26,7 @@ cookieSoldTotals[0] = 'Hourly Totals';//first element in the array stores the ro
 
 var storeLocations = [loc1stAndPike, locSeaTac, locSeattleCenter, locCapitolHill, locAlki];
 var storeCount = storeLocations.length;
-var tableHead = ['','6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Store Totals'];
+var tableHead = ['','6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm', '8:00 pm', 'Store Totals'];
 
 var formElt = document.getElementById('storeForm');
 
